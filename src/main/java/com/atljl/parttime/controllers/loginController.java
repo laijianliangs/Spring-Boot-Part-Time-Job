@@ -32,7 +32,11 @@ public class loginController {
     ) {
         User user = service.getUserByUserName(username);
         if (user != null && userpassword.equals(user.getUserpassword()))
+        {
+            session.setAttribute("username","你好，"+username);
             return "redirect:/index";
+        }
+
         else {
             model.addAttribute("msg","用户名或密码错误！");
 

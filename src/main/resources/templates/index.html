@@ -1,10 +1,825 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF主页-8">
-    <title></title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>青芒兼职网 </title>
+<meta name="keywords" content="高灯兼职网，兼职"/>
+<meta name="description" content="高灯兼职网为您最供最新的兼职招聘信息。"/>
+<link rel="stylesheet" href="http://a.gaodengkeji.com/app/template/default/style/part.css?v=1034" type="text/css"/>
+<link rel="stylesheet" href="http://a.gaodengkeji.com/app/template/default/style/css.css?v=1034" type="text/css"/>
 </head>
-<body>
-欢迎来到主页
+<body  class="body_bg">
+
+<div class="yun_new_right" style="color: #1d2124">
+    <div th:if="${session.username}!=null" th:text="${session.username}">
+        </div>
+    <div th:if="${session.username}==null">
+        <a href="/login/" th:text="登录"></a>
+    </div>
+
+</div>
+ <div class="hp_head hp_head_box">
+<div class="w1200">
+    <div class="hp_head_ft fl">
+        <div class="hp_head_ft_logo fl"><img  src="/static/pictures/logo.png" alt="青芒兼职网"/></a></div>
+
+    </div>
+     <div class="yun_header_nav_box">
+     <ul>
+                <li class=""> <a href="http://a.gaodengkeji.com/m_index.html"  class="png"> 首页 </a>
+                          <i class="yun_new_headernav_list_line"></i>
+          </li>
+                    <li class="nav_list_hover"> <a href="http://a.gaodengkeji.com/part/"  target="_blank" class="png"> 兼职 </a>
+                         <div class="nav_icon nav_icon_new">  <img src="http://a.gaodengkeji.com/app/template/default/images/new.gif"> </div>
+                           <i class="yun_new_headernav_list_line"></i>
+          </li>
+                    <li class="nav_list_hover"> <a href="http://a.gaodengkeji.com/part/"  class="png"> 紧急招聘 </a>
+                         <div class="nav_icon nav_icon_new">  <img src="http://a.gaodengkeji.com/app/template/default/images/new.gif"> </div>
+                           <i class="yun_new_headernav_list_line"></i>
+          </li>
+                    <li class=""> <a href="http://a.gaodengkeji.com/part/list/0-39-0-0-1.html"  class="png"> 热门职位 </a>
+                         <div class="nav_icon nav_icon_new">  <img src="http://a.gaodengkeji.com/app/template/default/images/new.gif"> </div>
+                           <i class="yun_new_headernav_list_line"></i>
+          </li>
+               </ul>
+
+
+</div>  </div>
+</div>
+
+ 
+ <div class="header_fixed yun_bg_color none" id="header_fix">
+  <div class="header_fixed_cont">
+    <ul class="header_fixed_list">
+            <li class=""><a href="http://a.gaodengkeji.com/m_index.html" >首页</a></li>
+            <li class="header_fixed_list_cur"><a href="http://a.gaodengkeji.com/part/"  target="_blank">兼职</a></li>
+            <li class="header_fixed_list_cur"><a href="http://a.gaodengkeji.com/part/" >紧急招聘</a></li>
+            <li class=""><a href="http://a.gaodengkeji.com/part/list/0-39-0-0-1.html" >热门职位</a></li>
+            <li class=""><a href="http://a.gaodengkeji.com/article/" >职场资讯</a></li>
+          </ul>
+    <script language='JavaScript' src='http://a.gaodengkeji.com/index.php?m=ajax&c=ReadIndexHeader'></script> 
+ 
+    <div class="header_fixed_close"><a href="javascript:;" onclick="$('#header_fix').remove();" rel="nofollow">关闭</a></div>
+  </div>
+</div>
+ 
+<div class="clear"></div >
+<div class="wapper">
+  <div class="current_Location icon"></div>
+  <div class="yun_part_left">
+    <div class="yun_part_left_box">
+      <form action="http://a.gaodengkeji.com/part/" method="get" onsubmit="return search_keyword(this,'请输入职位名称的关键字');">
+         
+  
+        <!--
+			<div class="Search_citybox">
+				<div class="Search_cityboxname"> 按地区：</div>
+				<div class="Search_citybox_right">
+					<div class="Search_cityall none"> 
+						<a href="http://a.gaodengkeji.com/part/list/0-0-0-0-1.html" class="city_name">全部</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/2-0-0-0-1.html" class="city_name ">北京</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/3446-0-0-0-1.html" class="city_name ">不限制地区</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/27-0-0-0-1.html" class="city_name ">天津</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/25-0-0-0-1.html" class="city_name ">上海</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/32-0-0-0-1.html" class="city_name ">重庆</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/16-0-0-0-1.html" class="city_name ">江苏</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/3-0-0-0-1.html" class="city_name ">安徽</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/6-0-0-0-1.html" class="city_name ">广东</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/31-0-0-0-1.html" class="city_name ">浙江</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/4-0-0-0-1.html" class="city_name ">福建</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/18-0-0-0-1.html" class="city_name ">辽宁</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/12-0-0-0-1.html" class="city_name ">黑龙江</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/13-0-0-0-1.html" class="city_name ">湖北</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/14-0-0-0-1.html" class="city_name ">湖南</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/10-0-0-0-1.html" class="city_name ">河北</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/11-0-0-0-1.html" class="city_name ">河南</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/30-0-0-0-1.html" class="city_name ">云南</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/5-0-0-0-1.html" class="city_name ">甘肃</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/7-0-0-0-1.html" class="city_name ">广西</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/8-0-0-0-1.html" class="city_name ">贵州</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/9-0-0-0-1.html" class="city_name ">海南</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/15-0-0-0-1.html" class="city_name ">吉林</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/17-0-0-0-1.html" class="city_name ">江西</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/26-0-0-0-1.html" class="city_name ">四川</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/24-0-0-0-1.html" class="city_name ">陕西</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/23-0-0-0-1.html" class="city_name ">山西</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/22-0-0-0-1.html" class="city_name ">山东</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/21-0-0-0-1.html" class="city_name ">青海</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/20-0-0-0-1.html" class="city_name ">宁夏</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/19-0-0-0-1.html" class="city_name ">内蒙古</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/28-0-0-0-1.html" class="city_name ">西藏</a> 
+						 
+							<a href="http://a.gaodengkeji.com/part/list/29-0-0-0-1.html" class="city_name ">新疆</a> 
+						 
+					</div>
+
+					<div class="Search_cityboxright"> 
+						<a href="javascript:;" onclick="acityshow('1')" class="search_city_list_cur search_city_active  none  acity_two" style="text-decoration:none;cursor:pointer;">
+
+							<span class="search_city_p"></span>
+							<i class="search_city_p_jt"></i>
+							<i class="search_city_list_line"></i>
+
+						</a> 
+						
+						<a href="javascript:;"  class="search_city_list_cur  none acity_three" style="text-decoration:none;cursor:pointer;">
+							<span class="search_city_p">
+								不限							</span>
+							<i class="search_city_list_line"></i>
+						</a> 
+						
+						<a href="http://a.gaodengkeji.com/part/list/0-0-0-0-1.html" class="search_city_list_all city_name_active">全部</a>
+
+						<div class="search_city_list">
+							 
+								<a href="http://a.gaodengkeji.com/part/list/2-0-0-0-1.html" class="city_name  ">北京</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/3446-0-0-0-1.html" class="city_name  ">不限制地区</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/27-0-0-0-1.html" class="city_name  ">天津</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/25-0-0-0-1.html" class="city_name  ">上海</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/32-0-0-0-1.html" class="city_name  ">重庆</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/16-0-0-0-1.html" class="city_name  ">江苏</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/3-0-0-0-1.html" class="city_name  ">安徽</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/6-0-0-0-1.html" class="city_name  ">广东</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/31-0-0-0-1.html" class="city_name  ">浙江</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/4-0-0-0-1.html" class="city_name  ">福建</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/18-0-0-0-1.html" class="city_name  ">辽宁</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/12-0-0-0-1.html" class="city_name  ">黑龙江</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/13-0-0-0-1.html" class="city_name  ">湖北</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/14-0-0-0-1.html" class="city_name  ">湖南</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/10-0-0-0-1.html" class="city_name  ">河北</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/11-0-0-0-1.html" class="city_name none ">河南</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/30-0-0-0-1.html" class="city_name none ">云南</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/5-0-0-0-1.html" class="city_name none ">甘肃</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/7-0-0-0-1.html" class="city_name none ">广西</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/8-0-0-0-1.html" class="city_name none ">贵州</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/9-0-0-0-1.html" class="city_name none ">海南</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/15-0-0-0-1.html" class="city_name none ">吉林</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/17-0-0-0-1.html" class="city_name none ">江西</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/26-0-0-0-1.html" class="city_name none ">四川</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/24-0-0-0-1.html" class="city_name none ">陕西</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/23-0-0-0-1.html" class="city_name none ">山西</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/22-0-0-0-1.html" class="city_name none ">山东</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/21-0-0-0-1.html" class="city_name none ">青海</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/20-0-0-0-1.html" class="city_name none ">宁夏</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/19-0-0-0-1.html" class="city_name none ">内蒙古</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/28-0-0-0-1.html" class="city_name none ">西藏</a> 
+							 
+								<a href="http://a.gaodengkeji.com/part/list/29-0-0-0-1.html" class="city_name none ">新疆</a> 
+							 
+						</div>
+
+						<a href="javascript:;" class="search_city_list_more" id="acity">更多</a>
+						
+					</div>
+					
+					<div class="Search_cityboxclose none" id="acity_two"> 
+						<a href="http://a.gaodengkeji.com/part/list/-0-0-0-1.html" class="city_name ">不限</a> 
+						
+						 
+					</div>
+
+					<div class="Search_cityboxclose none" id="acity_three"> 
+						<a href="http://a.gaodengkeji.com/part/list/_-0-0-0-1.html" class="city_name ">不限</a> 
+						
+						 
+					</div>
+				</div>
+			</div>-->
+         
+
+       
+        <div class="Search_jobs_form_list">
+          <div class="Search_cityboxname"> 按类型：</div>
+          <div class="Search_cityboxright ">  
+            <a href="http://a.gaodengkeji.com/part/list/0-0-0-0-1.html" class="Search_jobs_sub_a Search_jobs_sub_cur">全部</a>  <a href="http://a.gaodengkeji.com/part/list/0-41-0-0-1.html" class="Search_jobs_sub_a ">手机兼职</a>  <a href="http://a.gaodengkeji.com/part/list/0-39-0-0-1.html" class="Search_jobs_sub_a ">网上兼职</a>  <a href="http://a.gaodengkeji.com/part/list/0-38-0-0-1.html" class="Search_jobs_sub_a ">网络营销</a>  <a href="http://a.gaodengkeji.com/part/list/0-29-0-0-1.html" class="Search_jobs_sub_a ">网络兼职</a>  <a href="http://a.gaodengkeji.com/part/list/0-33-0-0-1.html" class="Search_jobs_sub_a ">电脑兼职</a>  <a href="http://a.gaodengkeji.com/part/list/0-32-0-0-1.html" class="Search_jobs_sub_a ">APP兼职</a>  <a href="http://a.gaodengkeji.com/part/list/0-31-0-0-1.html" class="Search_jobs_sub_a ">传单派发</a>  <a href="http://a.gaodengkeji.com/part/list/0-30-0-0-1.html" class="Search_jobs_sub_a ">促销导购</a>  </div>
+        </div>
+        <div class="Search_jobs_form_list">
+          <div class="Search_cityboxname"> 关键字：</div>
+          <input type="text" name="keyword" value="请输入职位名称的关键字" onclick="if(this.value=='请输入职位名称的关键字'){this.value=''}" onblur="if(this.value==''){this.value='请输入职位名称的关键字'}" class="Search_jobs_text ">
+          <input type="submit" value="搜索" class="Search_jobs_submit yun_bg_color">
+        </div>
+      </form>
+	  
+	  
+	  
+       </div>
+    <div class="yun_part_left_tit"> <span class="yun_part_left_tit_s"><i class="yun_part_left_tit_line"></i>兼职招聘</span>
+      <div class="job_list_selct fr">
+        <div class="part_job_js_box">
+          <input class="job_select" id="BillingCycleButton" type="button" value="结算方式" onclick="ShowPartDiv('BillingCycle');"/>
+		  
+          <ul class="job_sel_list none" id="BillingCycle">
+                        <li><a href="http://a.gaodengkeji.com/part/list/0-0-20-0-1.html">日结</a></li>
+                        <li><a href="http://a.gaodengkeji.com/part/list/0-0-21-0-1.html">周结</a></li>
+                        <li><a href="http://a.gaodengkeji.com/part/list/0-0-22-0-1.html">月结</a></li>
+                        <li><a href="http://a.gaodengkeji.com/part/list/0-0-23-0-1.html">完工结</a></li>
+                      </ul>
+		  
+        </div>
+        <ul class="search_Filter_list">
+          <li > <a href="http://a.gaodengkeji.com/part/list/0-0-0-lastdate-1.html"><span>更新时间</span><i class="search_Filter_icon"></i></a> </li>
+          <li > <a href="http://a.gaodengkeji.com/part/list/0-0-0-addtime-1.html"><span>发布时间</span><i class="search_Filter_icon"></i></a> </li>
+                    <li > <a href="http://a.gaodengkeji.com/part/list/0-0-0-hits-1.html"><span>热度</span><i class="search_Filter_icon"></i></a> </li>
+        </ul>
+      </div>
+    </div>
+    
+   
+    
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_5.html" target="_blank">诚招在线上兼职工实时结</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：        中山-西区街道
+        </span> <span class="yun_part_jobinfo_s">招聘人数：28人</span> <span class="yun_part_jobinfo_s">所属类型：网络兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">190</em> 元/天 </span> --><span class="yun_part_jobjs">日结</span> </div>
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_7.html" target="_blank">手机兼职闲时做日结</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：</span> <span class="yun_part_jobinfo_s">招聘人数：30人</span> <span class="yun_part_jobinfo_s">所属类型：网络兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">200</em> 元/天 </span> --><span class="yun_part_jobjs">日结</span> </div>
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_27.html" target="_blank">高薪兼职</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：        全国
+       <!-- 上海-上海-->
+        </span> <span class="yun_part_jobinfo_s">招聘人数：14人</span> <span class="yun_part_jobinfo_s">所属类型：网络兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">180</em> 元/次 </span> --><span class="yun_part_jobjs">日结</span> </div>
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_40.html" target="_blank">诚聘兼职临时工数名</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：        全国
+       <!-- 贵州-遵义-->
+        </span> <span class="yun_part_jobinfo_s">招聘人数：16人</span> <span class="yun_part_jobinfo_s">所属类型：传单派发</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">180</em> 元/小时 </span> --><span class="yun_part_jobjs">日结</span> </div>
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_49.html" target="_blank">诚聘兼职现结薪资</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：        全国
+       <!-- 上海-上海-->
+        </span> <span class="yun_part_jobinfo_s">招聘人数：35人</span> <span class="yun_part_jobinfo_s">所属类型：手机兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">180</em> 元/次 </span> --><span class="yun_part_jobjs">完工结</span> </div>
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_56.html" target="_blank">诚聘兼职临时工</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：        全国
+       <!-- 湖南-怀化-->
+        </span> <span class="yun_part_jobinfo_s">招聘人数：26人</span> <span class="yun_part_jobinfo_s">所属类型：APP兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">180</em> 元/小时 </span> --><span class="yun_part_jobjs">完工结</span> </div>
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_84.html" target="_blank">兼职日结</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：        全国
+       <!-- 福建-莆田-->
+        </span> <span class="yun_part_jobinfo_s">招聘人数：10人</span> <span class="yun_part_jobinfo_s">所属类型：网络兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">180</em> 元/次 </span> --><span class="yun_part_jobjs">日结</span> </div>
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_94.html" target="_blank">诚聘兼职小时工</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：        全国
+       <!-- 江苏-泰州-->
+        </span> <span class="yun_part_jobinfo_s">招聘人数：35人</span> <span class="yun_part_jobinfo_s">所属类型：网络兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">180</em> 元/次 </span> --><span class="yun_part_jobjs">日结</span> </div>
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_95.html" target="_blank">诚聘兼职人员数名</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：        全国
+       <!-- 四川-南充-->
+        </span> <span class="yun_part_jobinfo_s">招聘人数：40人</span> <span class="yun_part_jobinfo_s">所属类型：电脑兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">180</em> 元/次 </span> --><span class="yun_part_jobjs">完工结</span> </div>
+        <div class="yun_part_joblist">
+     <div class="yun_part_jobtj"><span class="yun_part_jobtj_n">推荐优选兼职</span></div>       <div class="yun_part_jobname"> <a href="http://a.gaodengkeji.com/part/c_show-id_99.html" target="_blank">诚聘数名在线兼职工</a></div>
+      <div class="yun_part_jobinfo"> <span class="yun_part_jobinfo_add">工作地点：        全国
+       <!-- 重庆-重庆-->
+        </span> <span class="yun_part_jobinfo_s">招聘人数：46人</span> <span class="yun_part_jobinfo_s">所属类型：网上兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
+      <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">180</em> 元/天 </span> --><span class="yun_part_jobjs">日结</span> </div>
+    	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+        <div class="clear"></div>
+    <div class="pages fl" style="padding-top:20px; padding-bottom:10px;"> <a href="http://a.gaodengkeji.com/part/page_1.html">上一页</a><a href="#" class="selected">1</a><a href="http://a.gaodengkeji.com/part/page_2.html">2</a><a href="http://a.gaodengkeji.com/part/page_3.html">3</a><em>...</em><a href="http://a.gaodengkeji.com/part/page_15.html">15</a><a href="http://a.gaodengkeji.com/part/page_16.html">16</a><a href="http://a.gaodengkeji.com/part/page_2.html">下一页</a><em class="pages_b_no">转到第 <input type="text" value="" class="input-num" id="gotoPage3064" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onkeydown="if(event.keyCode==13){return false;}"/> 页<input class="bt-confirm" type="button" value="确定" onclick="turnPages('http://a.gaodengkeji.com/part/page_{{page}}.html','3064',16);" /></em><script>function turnPages(url,num,pages){
+        	var page=$("#gotoPage"+num).val();
+        	if(page>pages){
+        		page=pages;
+        	}
+        	url=url.replace("{{page}}",page);
+        	window.location.href=url;
+            }</script><style>.input-num{width:40px;height:22px;line-height:22px;border:1px solid #ccc;}.diggg .pages_b_no{border:none;}
+        .bt-confirm{background:#f60;border:none;color: #FFFFFF; cursor: pointer;height:25px; width: 48px;border-radius:3px; margin-left:3px;}</style> </div>
+  </div>
+  <div class="job_right fr">
+    <div class="job_right_one fl">
+      <div class="job_part_img"></div>
+      <div class="job_part">
+        <div class="job_part_h fl">我要招兼职人才</div>
+        <div class="job_state fl"> 发布兼职职位，让优质的求职者投身于你们的工作之中 </div>
+                 <a class="job_bth" onclick="showlogin('2');"  href="javascript:void(0);">发布兼职</a>          </div>
+    </div>
+    <div class="yun_part_tjbox">
+      <div class="yun_part_tjbox_h1"><i class="yun_part_tjbox_h1_n"></i><span class="yun_part_tjbox_h1_s">优选兼职</span></div>
+      <div class="yun_part_tjbox_list">
+        <ul>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_5.html">诚招在线上兼职工实时</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">190</em>元/天--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!--中山-西区街道--></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_7.html">手机兼职闲时做日结</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">200</em>元/天--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!-----></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_27.html">高薪兼职</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">180</em>元/次--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!--上海---></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_40.html">诚聘兼职临时工数名</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">180</em>元/小时--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!--遵义---></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_49.html">诚聘兼职现结薪资</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">180</em>元/次--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!--上海---></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_56.html">诚聘兼职临时工</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">180</em>元/小时--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!--怀化---></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_84.html">兼职日结</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">180</em>元/次--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!--莆田---></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_94.html">诚聘兼职小时工</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">180</em>元/次--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!--泰州---></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_95.html">诚聘兼职人员数名</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">180</em>元/次--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!--南充---></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                    <li>
+            <div class="yun_part_tjbox_jobname"><a href="http://a.gaodengkeji.com/part/c_show-id_99.html">诚聘数名在线兼职工</a></div>
+           <div class="yun_part_tjbox_jobxz"> <!--<em class="yun_part_tjbox_jobxz_n">180</em>元/天--></div>
+            <div class="yun_part_tjbox_jobinfo"> <em class="">全国<!--重庆---></em> <span class="yun_part_tjbox_jobtime">2019-09-29更新</span> </div>
+          </li>
+                  </ul>
+      </div>
+    </div>
+          
+    
+  
+  </div>
+</div>
+<script src="http://a.gaodengkeji.com/js/jquery-1.8.0.min.js?v=1034" language="javascript"></script>
+<link href="http://a.gaodengkeji.com/js/layui/css/layui.css?v=1034" rel="stylesheet" type="text/css" />
+<script src="http://a.gaodengkeji.com/js/layui/layui.js?v=1034"></script><script src="http://a.gaodengkeji.com/js/layui/phpyun_layer.js?v=1034"></script> 
+<script src="http://a.gaodengkeji.com/js/public.js?v=1034" language="javascript"></script> 
+<script src="http://a.gaodengkeji.com/app/template/default/js/part.js?v=1034" language="javascript"></script> 
+<script src="http://a.gaodengkeji.com/js/search.js?v=1034" type="text/javascript"></script> 
+<!--[if IE 6]>
+<script src="http://a.gaodengkeji.com/js/png.js?v=1034"></script>
+<script>
+DD_belatedPNG.fix('.png');
+</script>
+<![endif]--> 
+<link rel="stylesheet" href="http://a.gaodengkeji.com/app/template/default/style/tck_logoin.css?v=1034" type="text/css" />
+<div class="none" id="onlogin">
+	<div class="login_pop_up_box">
+	</div>
+</div>
+<script src="http://a.gaodengkeji.com/app/template/default/js/reg_ajax.js?v=1034" type="text/javascript"></script>
+<script>
+	function showlogin(usertype) {
+		checkCode('vcode_img');
+		$("#login_usertype").val(usertype);
+		var reg_moblie = '0';
+		var reg_email = '0';
+		if(usertype == 1 || usertype == "" || !usertype) {
+			if(reg_moblie == '1') {
+				var url = 'http://a.gaodengkeji.com/register/usertype_1-type_2.html';
+			} else if(reg_email == '1') {
+				var url = 'http://a.gaodengkeji.com/register/usertype_1-type_3.html';
+			} else {
+				var url = 'http://a.gaodengkeji.com/register/usertype_1-type_1.html';
+			}
+		} else if(usertype == 2) {
+			if(reg_moblie == '1') {
+				var url = 'http://a.gaodengkeji.com/register/usertype_2-type_2.html';
+			} else if(reg_email == '1') {
+				var url = 'http://a.gaodengkeji.com/register/usertype_2-type_3.html';
+			} else {
+				var url = 'http://a.gaodengkeji.com/register/usertype_2-type_1.html';
+			}
+		} 
+		$("#onregister").attr("href", url);
+		$.layer({
+			id: 'onloginid',
+			type: 1,
+			title: '会员登录',
+			closeBtn: [0, true],
+			offset: ['20%', '30%'],
+			border: [10, 0.3, '#000', true],
+			area: ['500px', '520px'],
+			page: {
+				dom: "#onlogin"
+			}
+		});
+	}
+
+	function checkajaxlogin(img) {
+		var username = $.trim($("#login_username").val());
+		var password = $.trim($("#login_password").val());
+		var usertype = $.trim($("#login_usertype").val());
+		var geetest_challenge;
+		var geetest_validate;
+		var geetest_seccode;
+		var authcode;
+		if(username == "" || password == "") {
+			layer.closeAll();
+			layer.msg('请准确填写用户登录信息！', 2, 8, function() {
+				showlogin(usertype);
+			});
+			return false;
+		}
+		var code_kind = '1';
+		var code_web = '前台登录,店铺招聘,后台登录,职场提问';
+		var codesear = new RegExp('前台登录');
+		if(codesear.test(code_web)) {
+
+			if(code_kind == '1') {
+				authcode = $.trim($("#login_authcode").val());
+				if(authcode == '') {
+					layer.closeAll();
+					layer.msg('请填写验证码！', 2, 8, function() {
+						showlogin(usertype);
+					});
+					return false;
+				}
+			} else if(code_kind == '3') {
+
+				var geetest_challenge = $('input[name="geetest_challenge_publiclogin"]').val();
+				var geetest_validate = $('input[name="geetest_validate_publiclogin"]').val();
+				var geetest_seccode = $('input[name="geetest_seccode_publiclogin"]').val();
+				if(geetest_challenge == '' || geetest_validate == '' || geetest_seccode == '') {
+
+					$("#popup-submit").trigger("click");
+					layer.msg('请点击按钮进行验证！', 2, 8, function() {
+						showlogin(usertype);
+					});
+					return false;
+				}
+
+			}
+		}
+		layer.load('登录中,请稍候...');
+
+		$.post("http://a.gaodengkeji.com/login/c_loginsave.html", {
+			comid: 1,
+			username: username,
+			password: password,
+			authcode: authcode,
+			usertype: usertype,
+			geetest_challenge: geetest_challenge,
+			geetest_validate: geetest_validate,
+			geetest_seccode: geetest_seccode
+		}, function(data) {
+			layer.closeAll();
+			var jsonObject = eval("(" + data + ")");
+			if(jsonObject.error == '3') { 
+				$('#uclogin').html(jsonObject.msg);
+				setTimeout("window.location.href='" + jsonObject.url + "';", 500);
+			} else if(jsonObject.error == '2') { 
+				$('#uclogin').html(jsonObject.msg);
+				setTimeout("location.reload();", 500);
+			} else if(jsonObject.error == '1') { 
+
+				location.reload();
+				return false;
+
+			} else if(jsonObject.error == '0') { 
+
+				if(codesear.test(code_web)) {
+					if(code_kind == '1') {
+
+						checkCode(img);
+
+					} else if(code_kind == '3') {
+
+						$("#popup-submit").trigger("click");
+
+					}
+				}
+				layer.msg(jsonObject.msg, 2, 8, function() {
+					showlogin(usertype);
+				});
+
+				return false;
+
+			}
+		});
+	}
+	$(document).ready(function() {
+
+		var handlerPopupLogin = function(captchaObj) {
+			
+
+			captchaObj.onSuccess(function() {
+
+				var validate = captchaObj.getValidate();
+
+				if(validate) {
+					$("input[name='geetest_challenge_publiclogin']").val(validate.geetest_challenge);
+					$("input[name='geetest_validate_publiclogin']").val(validate.geetest_validate);
+					$("input[name='geetest_seccode_publiclogin']").val(validate.geetest_seccode);
+				}
+
+			});
+			$("#popup-submit").click(function() {
+
+				$("input[name='geetest_challenge_publiclogin']").val('');
+				$("input[name='geetest_validate_publiclogin']").val('');
+				$("input[name='geetest_seccode_publiclogin']").val('');
+
+				captchaObj.reset();
+			});
+
+			captchaObj.appendTo("#popup-captcha-publiclogin");
+
+		};
+
+		if($("#popup-captcha-publiclogin").length > 0) {
+			$.ajax({
+				url: weburl + "/index.php?m=geetest&t=" + (new Date()).getTime(),
+				type: "get",
+				dataType: "json",
+				success: function(data) {
+
+					initGeetest({
+						gt: data.gt,
+						challenge: data.challenge,
+						product: "popup",
+						width: "100%",
+						offline: !data.success,
+						new_captcha: data.new_captcha
+					}, handlerPopupLogin);
+				}
+			});
+		}
+		var setval;
+		$('.wxcode_login').click(function(data) {
+
+			$('.wxcode_login').hide();
+			$('.normal_login').show();
+			$('#login_normal').hide();
+			$('.wx_login_show').show();
+			$.post('http://a.gaodengkeji.com/login/c_wxlogin.html', {
+				t: 1
+			}, function(data) {
+				if(data == 0) {
+					$('#wx_login_qrcode').html('二维码获取失败..');
+				} else {
+					$('#wx_login_qrcode').html('<img src="' + data + '" width="100" height="100">');
+					setval = setInterval("wxorderstatus()", 2000);
+				}
+			});
+
+		});
+		$('.normal_login').click(function(data) {
+
+			$('.wxcode_login').show();
+			$('.normal_login').hide();
+			$('#login_normal').show();
+			$('.wx_login_show').hide();
+			clearInterval(setval);
+		});
+
+		
+		$('#acount_login').click(function(data) {
+			$('#acount_login').removeClass().addClass('login_pop_up_cur');
+			$('#mobile_login').removeClass();
+			$('#login_normal_box').show();
+			$('#login_sj_box').hide();
+			$('#login_sjyz_box').hide();
+			$('#act_login').val('0');
+		});
+		$('#mobile_login').click(function(data) {
+			$('#mobile_login').removeClass().addClass('login_pop_up_cur');
+			$('#acount_login').removeClass();
+			$('#login_sj_box').show();
+			$('#login_sjyz_box').show();
+			$('#login_normal_box').hide();
+			$('#act_login').val('1');
+		});
+	});
+
+	function wxorderstatus() {
+		$.post('http://a.gaodengkeji.com/login/c_getwxloginstatus.html', {
+			t: 1
+		}, function(data) {
+
+			var data = eval('(' + data + ')');
+			if(data.url != '' && data.msg != '') {
+				layer.msg(data.msg, 2, 9, function() {
+					window.location.href = data.url;
+				});
+			} else if(data.url) {
+
+				window.location.href = '';
+			}
+		});
+	}
+</script>
+
+
+<div class="hp_foot fl">
+<div class="w1000">
+     <div class="hp_foot_wt fl">
+
+     </div>
+     <div class="hp_foot_wh fl">
+
+     </div>
+<!--
+     <div class="hp_foot_wx fr">
+          <dl>
+              <dt><img src="http://a.gaodengkeji.com/data/logo/20170418/14708405239.PNG"  width="105" height="105"></dt>
+              <dd>微信公众号</dd>
+          </dl>
+
+     </div>  <div class="hp_foot_wx fr">
+          <dl>
+              <dt><img src="http://a.gaodengkeji.com/./data/logo/20190824/15718708522.png"  width="105" height="105"></dt>
+              <dd>手机浏览</dd>
+          </dl>
+
+     </div>
+-->
+
+
+</div>
+<div class="clear"></div>
+     <div class="hp_foot_bt">
+     <div class="hp_foot_bt_c">
+          <p>Copyright ? 2005-2019 高灯兼职招聘网 ，深圳市高灯科技有限公司  版权所有 <i class="hp_foot_bt_cr"><a href='http://beian.miit.gov.cn' target='_blank'> 粤ICP备19086894号-1</a></i></p>
+          <p>地址：深圳市龙岗区平湖街道平湖社区平安大道1号华南城铁东物流区13栋3A13 EMAIL：server@gaodengkeji.com</p>
+      	 
+     </div> </div>
+</div>
+
+<script>
+$(function(){
+	$(window).on('scroll',function(){
+		var st = $(document).scrollTop();
+		if( st>0 ){
+			if( $('#main-container').length != 0  ){
+				var w = $(window).width(),mw = $('#main-container').width();
+				if( (w-mw)/2 > 70 )
+					$('#go-top').css({'left':(w-mw)/2+mw+20});
+				else{
+					$('#go-top').css({'left':'auto'});
+				}
+			}
+			$('#go-top').fadeIn(function(){
+				$(this).removeClass('dn');
+			});
+		}else{
+			$('#go-top').fadeOut(function(){
+				$(this).addClass('dn');
+			});
+		}	
+	});
+	$('#go-top .go').on('click',function(){
+		$('html,body').animate({'scrollTop':0},500);
+	});
+
+	$('#go-top .uc-2vm').hover(function(){
+		$('#go-top .uc-2vm-pop').removeClass('dn');
+	},function(){
+		$('#go-top .uc-2vm-pop').addClass('dn');
+	});
+});
+</script>
+ <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+
+  
+document.writeln("<script src=\'https://www.33jianzhi.com/ad/weixinhao_baidu.js?v=  " + Math.random() + " \' language=\'javascript\'></s" + "cript>");
+  
+  
+</script>
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a8954ccd0569b5fb08ede45978769c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
 </body>
-</html>
+</html> 
