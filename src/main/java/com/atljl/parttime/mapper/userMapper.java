@@ -22,4 +22,7 @@ public interface userMapper {
 
     @Update("update user set username=#{username},sex=#{sex},age=#{age},userpassword=#{userpassword} where ID=#{ID} ")
     public void updateUser(User user);
+
+    @Select("select * from user where username=#{username}")
+    public boolean getUserByNameB(String username);
 }

@@ -4,18 +4,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <title>青芒兼职网 </title>
-<meta name="keywords" content="高灯兼职网，兼职"/>
-<meta name="description" content="高灯兼职网为您最供最新的兼职招聘信息。"/>
-<link rel="stylesheet" href="http://a.gaodengkeji.com/app/template/default/style/part.css?v=1034" type="text/css"/>
-<link rel="stylesheet" href="http://a.gaodengkeji.com/app/template/default/style/css.css?v=1034" type="text/css"/>
+<link rel="stylesheet" href="../static/css/index1.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/index2.css" type="text/css"/>
 </head>
 <body  class="body_bg">
 
 <div class="yun_new_right" style="color: #1d2124">
-    <div th:if="${session.username}!=null" th:text="${session.username}">
-        </div>
-    <div th:if="${session.username}==null">
+    <div th:if="${session.user}!=null" th:text="${session.user.getUsername()}">
+    </div>
+    <div th:if="${session.user}==null">
         <a href="/login/" th:text="登录"></a>
+        <a href="/register/" th:text="注册"></a>
     </div>
 
 </div>
@@ -345,26 +344,6 @@
        <!-- 重庆-重庆-->
         </span> <span class="yun_part_jobinfo_s">招聘人数：46人</span> <span class="yun_part_jobinfo_s">所属类型：网上兼职</span> <span class="yun_part_jobinfo_s">更新日期：  <span style="color:red;">今天</span> </span></div>
       <!--<span class="yun_part_jobxz"><em class="yun_part_jobxz_n">180</em> 元/天 </span> --><span class="yun_part_jobjs">日结</span> </div>
-    	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
         <div class="clear"></div>
     <div class="pages fl" style="padding-top:20px; padding-bottom:10px;"> <a href="http://a.gaodengkeji.com/part/page_1.html">上一页</a><a href="#" class="selected">1</a><a href="http://a.gaodengkeji.com/part/page_2.html">2</a><a href="http://a.gaodengkeji.com/part/page_3.html">3</a><em>...</em><a href="http://a.gaodengkeji.com/part/page_15.html">15</a><a href="http://a.gaodengkeji.com/part/page_16.html">16</a><a href="http://a.gaodengkeji.com/part/page_2.html">下一页</a><em class="pages_b_no">转到第 <input type="text" value="" class="input-num" id="gotoPage3064" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onkeydown="if(event.keyCode==13){return false;}"/> 页<input class="bt-confirm" type="button" value="确定" onclick="turnPages('http://a.gaodengkeji.com/part/page_{{page}}.html','3064',16);" /></em><script>function turnPages(url,num,pages){
         	var page=$("#gotoPage"+num).val();
@@ -463,250 +442,6 @@ DD_belatedPNG.fix('.png');
 	<div class="login_pop_up_box">
 	</div>
 </div>
-<script src="http://a.gaodengkeji.com/app/template/default/js/reg_ajax.js?v=1034" type="text/javascript"></script>
-<script>
-	function showlogin(usertype) {
-		checkCode('vcode_img');
-		$("#login_usertype").val(usertype);
-		var reg_moblie = '0';
-		var reg_email = '0';
-		if(usertype == 1 || usertype == "" || !usertype) {
-			if(reg_moblie == '1') {
-				var url = 'http://a.gaodengkeji.com/register/usertype_1-type_2.html';
-			} else if(reg_email == '1') {
-				var url = 'http://a.gaodengkeji.com/register/usertype_1-type_3.html';
-			} else {
-				var url = 'http://a.gaodengkeji.com/register/usertype_1-type_1.html';
-			}
-		} else if(usertype == 2) {
-			if(reg_moblie == '1') {
-				var url = 'http://a.gaodengkeji.com/register/usertype_2-type_2.html';
-			} else if(reg_email == '1') {
-				var url = 'http://a.gaodengkeji.com/register/usertype_2-type_3.html';
-			} else {
-				var url = 'http://a.gaodengkeji.com/register/usertype_2-type_1.html';
-			}
-		} 
-		$("#onregister").attr("href", url);
-		$.layer({
-			id: 'onloginid',
-			type: 1,
-			title: '会员登录',
-			closeBtn: [0, true],
-			offset: ['20%', '30%'],
-			border: [10, 0.3, '#000', true],
-			area: ['500px', '520px'],
-			page: {
-				dom: "#onlogin"
-			}
-		});
-	}
-
-	function checkajaxlogin(img) {
-		var username = $.trim($("#login_username").val());
-		var password = $.trim($("#login_password").val());
-		var usertype = $.trim($("#login_usertype").val());
-		var geetest_challenge;
-		var geetest_validate;
-		var geetest_seccode;
-		var authcode;
-		if(username == "" || password == "") {
-			layer.closeAll();
-			layer.msg('请准确填写用户登录信息！', 2, 8, function() {
-				showlogin(usertype);
-			});
-			return false;
-		}
-		var code_kind = '1';
-		var code_web = '前台登录,店铺招聘,后台登录,职场提问';
-		var codesear = new RegExp('前台登录');
-		if(codesear.test(code_web)) {
-
-			if(code_kind == '1') {
-				authcode = $.trim($("#login_authcode").val());
-				if(authcode == '') {
-					layer.closeAll();
-					layer.msg('请填写验证码！', 2, 8, function() {
-						showlogin(usertype);
-					});
-					return false;
-				}
-			} else if(code_kind == '3') {
-
-				var geetest_challenge = $('input[name="geetest_challenge_publiclogin"]').val();
-				var geetest_validate = $('input[name="geetest_validate_publiclogin"]').val();
-				var geetest_seccode = $('input[name="geetest_seccode_publiclogin"]').val();
-				if(geetest_challenge == '' || geetest_validate == '' || geetest_seccode == '') {
-
-					$("#popup-submit").trigger("click");
-					layer.msg('请点击按钮进行验证！', 2, 8, function() {
-						showlogin(usertype);
-					});
-					return false;
-				}
-
-			}
-		}
-		layer.load('登录中,请稍候...');
-
-		$.post("http://a.gaodengkeji.com/login/c_loginsave.html", {
-			comid: 1,
-			username: username,
-			password: password,
-			authcode: authcode,
-			usertype: usertype,
-			geetest_challenge: geetest_challenge,
-			geetest_validate: geetest_validate,
-			geetest_seccode: geetest_seccode
-		}, function(data) {
-			layer.closeAll();
-			var jsonObject = eval("(" + data + ")");
-			if(jsonObject.error == '3') { 
-				$('#uclogin').html(jsonObject.msg);
-				setTimeout("window.location.href='" + jsonObject.url + "';", 500);
-			} else if(jsonObject.error == '2') { 
-				$('#uclogin').html(jsonObject.msg);
-				setTimeout("location.reload();", 500);
-			} else if(jsonObject.error == '1') { 
-
-				location.reload();
-				return false;
-
-			} else if(jsonObject.error == '0') { 
-
-				if(codesear.test(code_web)) {
-					if(code_kind == '1') {
-
-						checkCode(img);
-
-					} else if(code_kind == '3') {
-
-						$("#popup-submit").trigger("click");
-
-					}
-				}
-				layer.msg(jsonObject.msg, 2, 8, function() {
-					showlogin(usertype);
-				});
-
-				return false;
-
-			}
-		});
-	}
-	$(document).ready(function() {
-
-		var handlerPopupLogin = function(captchaObj) {
-			
-
-			captchaObj.onSuccess(function() {
-
-				var validate = captchaObj.getValidate();
-
-				if(validate) {
-					$("input[name='geetest_challenge_publiclogin']").val(validate.geetest_challenge);
-					$("input[name='geetest_validate_publiclogin']").val(validate.geetest_validate);
-					$("input[name='geetest_seccode_publiclogin']").val(validate.geetest_seccode);
-				}
-
-			});
-			$("#popup-submit").click(function() {
-
-				$("input[name='geetest_challenge_publiclogin']").val('');
-				$("input[name='geetest_validate_publiclogin']").val('');
-				$("input[name='geetest_seccode_publiclogin']").val('');
-
-				captchaObj.reset();
-			});
-
-			captchaObj.appendTo("#popup-captcha-publiclogin");
-
-		};
-
-		if($("#popup-captcha-publiclogin").length > 0) {
-			$.ajax({
-				url: weburl + "/index.php?m=geetest&t=" + (new Date()).getTime(),
-				type: "get",
-				dataType: "json",
-				success: function(data) {
-
-					initGeetest({
-						gt: data.gt,
-						challenge: data.challenge,
-						product: "popup",
-						width: "100%",
-						offline: !data.success,
-						new_captcha: data.new_captcha
-					}, handlerPopupLogin);
-				}
-			});
-		}
-		var setval;
-		$('.wxcode_login').click(function(data) {
-
-			$('.wxcode_login').hide();
-			$('.normal_login').show();
-			$('#login_normal').hide();
-			$('.wx_login_show').show();
-			$.post('http://a.gaodengkeji.com/login/c_wxlogin.html', {
-				t: 1
-			}, function(data) {
-				if(data == 0) {
-					$('#wx_login_qrcode').html('二维码获取失败..');
-				} else {
-					$('#wx_login_qrcode').html('<img src="' + data + '" width="100" height="100">');
-					setval = setInterval("wxorderstatus()", 2000);
-				}
-			});
-
-		});
-		$('.normal_login').click(function(data) {
-
-			$('.wxcode_login').show();
-			$('.normal_login').hide();
-			$('#login_normal').show();
-			$('.wx_login_show').hide();
-			clearInterval(setval);
-		});
-
-		
-		$('#acount_login').click(function(data) {
-			$('#acount_login').removeClass().addClass('login_pop_up_cur');
-			$('#mobile_login').removeClass();
-			$('#login_normal_box').show();
-			$('#login_sj_box').hide();
-			$('#login_sjyz_box').hide();
-			$('#act_login').val('0');
-		});
-		$('#mobile_login').click(function(data) {
-			$('#mobile_login').removeClass().addClass('login_pop_up_cur');
-			$('#acount_login').removeClass();
-			$('#login_sj_box').show();
-			$('#login_sjyz_box').show();
-			$('#login_normal_box').hide();
-			$('#act_login').val('1');
-		});
-	});
-
-	function wxorderstatus() {
-		$.post('http://a.gaodengkeji.com/login/c_getwxloginstatus.html', {
-			t: 1
-		}, function(data) {
-
-			var data = eval('(' + data + ')');
-			if(data.url != '' && data.msg != '') {
-				layer.msg(data.msg, 2, 9, function() {
-					window.location.href = data.url;
-				});
-			} else if(data.url) {
-
-				window.location.href = '';
-			}
-		});
-	}
-</script>
-
-
 <div class="hp_foot fl">
 <div class="w1000">
      <div class="hp_foot_wt fl">
@@ -736,90 +471,11 @@ DD_belatedPNG.fix('.png');
 <div class="clear"></div>
      <div class="hp_foot_bt">
      <div class="hp_foot_bt_c">
-          <p>Copyright ? 2005-2019 高灯兼职招聘网 ，深圳市高灯科技有限公司  版权所有 <i class="hp_foot_bt_cr"><a href='http://beian.miit.gov.cn' target='_blank'> 粤ICP备19086894号-1</a></i></p>
-          <p>地址：深圳市龙岗区平湖街道平湖社区平安大道1号华南城铁东物流区13栋3A13 EMAIL：server@gaodengkeji.com</p>
+          <p>Copyright ? 2018-2019 青芒兼职招聘网 ，龙岩市青芒科技有限公司  版权所有 <i class="hp_foot_bt_cr"><a href='http://beian.miit.gov.cn' target='_blank'> 闽ICP备19986794号-1</a></i></p>
+          <p>地址：龙岩市新罗区商务板块龙工大厦A119</p>
       	 
      </div> </div>
 </div>
-
-<script>
-$(function(){
-	$(window).on('scroll',function(){
-		var st = $(document).scrollTop();
-		if( st>0 ){
-			if( $('#main-container').length != 0  ){
-				var w = $(window).width(),mw = $('#main-container').width();
-				if( (w-mw)/2 > 70 )
-					$('#go-top').css({'left':(w-mw)/2+mw+20});
-				else{
-					$('#go-top').css({'left':'auto'});
-				}
-			}
-			$('#go-top').fadeIn(function(){
-				$(this).removeClass('dn');
-			});
-		}else{
-			$('#go-top').fadeOut(function(){
-				$(this).addClass('dn');
-			});
-		}	
-	});
-	$('#go-top .go').on('click',function(){
-		$('html,body').animate({'scrollTop':0},500);
-	});
-
-	$('#go-top .uc-2vm').hover(function(){
-		$('#go-top .uc-2vm-pop').removeClass('dn');
-	},function(){
-		$('#go-top .uc-2vm-pop').addClass('dn');
-	});
-});
-</script>
- <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-
-
-
-
-
-
-<script language="javascript" type="text/javascript">
-
-  
-document.writeln("<script src=\'https://www.33jianzhi.com/ad/weixinhao_baidu.js?v=  " + Math.random() + " \' language=\'javascript\'></s" + "cript>");
-  
-  
-</script>
-
-
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?7a8954ccd0569b5fb08ede45978769c1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
 
 </body>
 </html> 

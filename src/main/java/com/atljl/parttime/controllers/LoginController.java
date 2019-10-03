@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/login")
-public class loginController {
+public class LoginController {
 
     @Autowired
     userService service;
@@ -23,6 +23,7 @@ public class loginController {
     public String Login() {
         return "login";
     }
+
 
     @RequestMapping("/user")
     public String userLogin(@RequestParam("username") String username,
@@ -33,7 +34,9 @@ public class loginController {
         User user = service.getUserByUserName(username);
         if (user != null && userpassword.equals(user.getUserpassword()))
         {
-            session.setAttribute("username","你好，"+username);
+
+           session.setAttribute("user",user);
+            //session.setAttribute("username","hello"+username);
             return "redirect:/index";
         }
 

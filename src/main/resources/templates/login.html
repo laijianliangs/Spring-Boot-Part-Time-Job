@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Signin Template · Bootstrap</title>
+    <title>登录</title>
     <!--在线引入bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
@@ -35,13 +35,13 @@
     <!-- Custom styles for this template -->
     <link href="/static/css/signin.css" rel="stylesheet">
 </head>
-<body class="text-center">
+<body class="text-center" bgcolor="#f0ffff" background="../static/pictures/bg.jpg">
 <form class="form-signin" action="/login/user">
     <img class="mb-4" src="/static/pictures/bootstrap-solid.svg" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <div class="alert alert-danger"  th:if="${not #strings.isEmpty(msg)}" th:text="${msg}"></div>
     <label for="inputname" class="sr-only">User Name</label>
-    <input type="text" id="inputname" th:name="username" class="form-control" placeholder="User nmae" required autofocus>
+    <input type="text" id="inputname" th:name="username" class="form-control" placeholder="User Name" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" th:name="userpassword" class="form-control" placeholder="Password" required>
     <div class="checkbox mb-3">

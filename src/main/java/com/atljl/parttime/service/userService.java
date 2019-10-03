@@ -12,6 +12,17 @@ public class userService implements userMapper {
     @Autowired
     userMapper userMappers;
 
+    @Override
+    public boolean getUserByNameB(String username) {
+       User user=userMappers.getUserByUserName(username);
+       if(user==null)
+       {
+           return false;
+       }
+       else {
+           return true;
+       }
+    }
 
     @Override
     public User getUserById(long id) {
