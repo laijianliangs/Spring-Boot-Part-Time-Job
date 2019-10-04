@@ -1,57 +1,107 @@
 
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>登录</title>
-    <!--在线引入bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
-
-    <!-- Bootstrap core CSS -->
-    <link href="/static/css/bootstrap.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="/static/css/signin.css" rel="stylesheet">
+      <link rel="stylesheet" href="../static/css/register1.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/register2.css" type="text/css" />
 </head>
-<body class="text-center" bgcolor="#f0ffff" background="../static/pictures/bg.jpg">
-<form class="form-signin" action="/login/user">
-    <img class="mb-4" src="/static/pictures/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <div class="alert alert-danger"  th:if="${not #strings.isEmpty(msg)}" th:text="${msg}"></div>
-    <label for="inputname" class="sr-only">User Name</label>
-    <input type="text" id="inputname" th:name="username" class="form-control" placeholder="User Name" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" th:name="userpassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
+
+<body>
+<div class="alert alert-success" role="alert" th:if="${msg2}!=null" th:text="${msg2}"></div>
+<div class="login_cont">
+    <div class="login_w960">
+        <div class="login_header ">
+            <div class="logo fl" style="position:relative">
+                <a href="http://www.gaodengkeji.com"><img src="../static/pictures/logo.png" class="png"></a>
+            </div>
+            <a href="/index" class="logo_fh fr">返回网站首页>></a>
+        </div>
+
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+    <div class="clear"></div>
+<form action="/login/user" method="get">
+    <div class="logoin_cont_box">
+        <div class="login_left ">
+            <div class="login_box_cont">
+                <div class="login_box_h1_d">
+                    <input type="hidden" name="act" id="act_login" value="" />
+                    <ul class="login_box_h_list">
+                        <li id="acount_login" class="login_box_h_list_cur">账号登录 <i class="login_box_h_icon"></i></li>
+                    </ul>
+                </div>
+                <div class="wx_login_show none">
+                </div>
+
+                <div class="login_t_box">
+                    <div class="login_box_cot" id="login_normal">
+                        <div class="login_normal_box" id="login_normal_box">
+
+                            <div class="login_box_list">
+                                <i class="login_box_icon login_box_username"></i>
+                                <input type="text" class="login_box_bth placeholder loginname"  name="username" placeholder="用户名" id="username" autocomplete="off" />
+                            </div>
+                            <div class="login_box_list">
+                                <i class="login_box_icon loginpwd"></i>
+                                <input type="text" id="password2" class="login_box_bth placeholder loginname " value="密码" autocomplete="off" />
+                                <input type="password" id="password" name="password" class="login_box_bth placeholder loginname  none " value="" />
+                                <div class="logoin_msg none" id="show_pass">
+                                    <div class="logoin_msg_tx">请填写密码</div>
+                                    <div class="logoin_msg_icon"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div class="clear"></div>
+                        <div class="login_box_list">
+
+                        </div>
+
+
+                        <div class="clear"></div>
+                        <div class="login_box_cz">
+                            <input type="submit" value="登 录" id='sublogin' class="login_box_bth2" />
+                        </div>
+                        <div class="login_box_fw">
+                            <a href="/register/" class="fl">注册</a>
+                            <a href="" class="fr">忘记密码</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
 </form>
+    <div class="clear"></div>
+    <div class="logoin_banner">
+        <div class="flexslider">
+            <ul class="slides">
+                <li style="background: url(http://www.gaodengkeji.com/data/upload/pimg/20170418/14943852335.JPG) 50% 0 no-repeat;">
+                    <a href="http://www.gaodengkeji.com/c_clickhits-id_7.html" target="_blank" style="display:block;width:100%;height:100%;"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+
+</div>
+
+
+    <div class="clear"></div>
+<div class="clear"></div>
+<div class="hp_foot_bt">
+    <div class="hp_foot_bt_c" align="center">
+        <p>Copyright ? 2018-2019 青芒兼职招聘网 ，龙岩市青芒科技有限公司  版权所有 <i class="hp_foot_bt_cr"><a href='http://beian.miit.gov.cn' target='_blank'> 闽ICP备19986794号-1</a></i></p>
+        <p>地址：龙岩市新罗区商务板块龙工大厦A119</p>
+
+    </div> </div>
+
+
+
 
 </body>
 </html>
