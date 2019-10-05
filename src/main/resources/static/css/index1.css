@@ -371,7 +371,7 @@ em{ font-style:normal}
 .yun_part_left_tit{width:100%; background:#fff; margin-top:15px; float:left; padding:8px 0;}
 .yun_part_left_tit_s{ display:block;height:30px; line-height:30px; float:left; font-size:18px; float:left; padding-left:15px; position:relative}
 .yun_part_left_tit_line{width:4px;height: 16px;border-radius: 4px;background-color: #4aa3f9;display:inline-block; position:absolute;left:0px;top:8px}
-.yun_part_joblist{width:880px; background:#fff; margin-top:15px; float:left; padding:15px 20px; position:relative}
+.yun_part_joblist{width:920px; background:#fff; margin-top:15px; float:left; padding:15px 20px; position:relative}
 .yun_part_joblist:hover{box-shadow: 0 0 20px rgba(0,0,0, .1);}
 .yun_part_jobname{width:100%; float:left; padding-bottom:10px;}
 .yun_part_jobname a{font-size:16px; font-weight:bold}

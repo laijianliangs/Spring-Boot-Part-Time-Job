@@ -5,6 +5,8 @@ import com.atljl.parttime.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class userService implements userMapper {
@@ -54,6 +56,12 @@ public class userService implements userMapper {
 
         userMappers.updateUser(user);
 
+    }
+
+    @Override
+    public List<User> getListUser() {
+        List<User> list=userMappers.getListUser();
+        return list;
     }
 }
 

@@ -5,6 +5,8 @@ import com.atljl.parttime.model.User;
 import org.apache.ibatis.annotations.*;
 import org.mybatis.spring.annotation.MapperScan;
 
+import java.util.List;
+
 @Mapper
 public interface userMapper {
 
@@ -25,4 +27,7 @@ public interface userMapper {
 
     @Select("select * from user where username=#{username}")
     public boolean getUserByNameB(String username);
+
+    @Select("select * from user")
+    public List<User> getListUser();
 }

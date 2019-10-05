@@ -22,12 +22,8 @@ public class ParttimeApplicationTests {
     @Test
     public void test1()
     {
-        User user=user=service.getUserById(6);
-        user.setRealname("hsauha");
-
-
-        service.updateUser(user);
-
+       for(User user:service.getListUser())
+           System.out.println(user);
 
     }
 
