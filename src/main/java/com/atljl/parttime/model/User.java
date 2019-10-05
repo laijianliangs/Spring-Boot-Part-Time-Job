@@ -5,7 +5,10 @@ public class User {
     private String sex;
     private long ID;
     private int age;
+    private long usernumber;
+    private String userexperience;
     private String userpassword;
+    private String realname;
 
     @Override
     public String toString() {
@@ -14,8 +17,19 @@ public class User {
                 ", sex='" + sex + '\'' +
                 ", ID=" + ID +
                 ", age=" + age +
+                ", usernumber=" + usernumber +
+                ", userexperience='" + userexperience + '\'' +
                 ", userpassword='" + userpassword + '\'' +
+                ", realname='" + realname + '\'' +
                 '}';
+    }
+
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname;
     }
 
     public String getUsername() {
@@ -48,6 +62,22 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public long getUsernumber() {
+        return usernumber;
+    }
+
+    public void setUsernumber(long usernumber) {
+        this.usernumber = usernumber;
+    }
+
+    public String getUserexperience() {
+        return userexperience;
+    }
+
+    public void setUserexperience(String userexperience) {
+        this.userexperience = userexperience;
     }
 
     public String getUserpassword() {

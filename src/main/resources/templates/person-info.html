@@ -1,0 +1,152 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>个人用户管理中心-我的信息</title>
+    <link href="../static/css/person.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/person2.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div class="yun_user_member_top user_bg">
+    <div class="yun_user_member_w1100">
+        <div class="top_left fltL"></div>
+        <div class="header_seach_State fltR">
+            <a href="/index" target="_blank" title='返回网站首页' class="user_m_fanh">返回网站首页</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="header">
+    <div class="yun_user_member_w1100">
+        <div class="yun_m_logo  fltL">
+            <a href="/index" target="_blank" title='返回网站首页'>
+                <img alt="" src="../static/pictures/logo.png" >
+            </a>
+        </div>
+        <ul class="yun_user_member_nav">
+            <li class="yun_user_member_nav_cur"><a href="/person/">个人中心</a></li>
+        </ul>
+        <div class="">
+            <div class="header_m_navright">
+
+            </div>
+        </div>
+
+        <!-- 消息-->
+
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="clear"></div>
+
+<div id="bg" ></div>
+<div class="yun_w1200">
+    <div class="yun_m_leftsidebar">
+        <div class="yun_m_leftsidebar_box">
+            <div class="yun_m_leftsidebar_tit">
+                <span class="all_word">个人中心 </span>
+                <span class="all_cirle"></span>
+            </div>
+
+            <div class="left_sidebar_box" style="display:block">
+
+                <ul class="yun_m_leftsidebar_list">
+                    <!--<li><a href=""><i class="left_navicon left_navicon_i1"></i><span></span><b></b></a></li>-->
+                    <li><a href=""><i class="left_navicon left_navicon_i2"></i><span>基本信息</span><b></b></a></li>
+                    <!--<li><a href=""><i class="left_navicon left_navicon_i9"></i><span style="color:red;"></span><b></b></a></li>-->
+                    <li><a href=""><i class="left_navicon left_navicon_i3"></i><span>我的兼职</span><b></b></a></li>
+                    <li><a href=""><i class="left_navicon left_navicon_i4"></i><span>隐私设置</span><b></b></a></li>
+                    <li class="borend"><a href=""><i class="left_navicon left_navicon_i25"></i><span>账户绑定</span><b></b></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="left_wx_box">
+
+        </div>
+
+
+    </div>
+
+
+    <div class="index_no_resume_box" id="yingdao" style="display:none;">
+    </div>
+
+
+<form action="/person/info/modifty"  method="post">
+    <div class="yun_m_rightsidebar">
+
+        <div class="yun_m_index_data" style="display:none;">
+
+        </div>
+        <div class="yun_m_index_date_box">
+            <div class="resume_box_list" style="margin-top:0px;">
+                <div class="yun_m_info">
+                    <ul>
+                        <li class="yun_m_info_list">
+                            <div class="yun_m_info_name"><b>*</b> 姓 名</div>
+                            <div class="yun_m_info_text">
+                                <div class="yun_m_info_text_name_box">
+                                    <input name="realname" id="name" type="text" maxlength="50"  th:value="${session.user.getRealname()}"  class="yun_m_info_text_name_box_t" />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="yun_m_info_list">
+                            <div class="yun_m_info_name"><b>*</b> 性 别</div>
+                            <div class="yun_m_info_text">
+                                <div class="yun_m_info_text_name_box">
+                                    <input name="usersex" id="usersex" type="text" maxlength="50"  th:value="${session.user.getSex()}"  class="yun_m_info_text_name_box_t" />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="yun_m_info_list">
+                            <div class="yun_m_info_name"> <b>*</b> 工作经验</div>
+                            <div class="yun_m_info_text">
+                                <div class="yun_m_info_text_name_box">
+                                    <input name="userexperience"  id="userexperience"  th:value="${session.user.getUserexperience()}" type="text" maxlength="50"  class="yun_m_info_text_name_box_t" />
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="yun_m_info_list">
+                            <div class="yun_m_info_name"><b>*</b> 手机</div>
+                            <div class="yun_m_info_text">
+                                <div class="yun_m_info_text_box yun_m_info_text_box_re">
+                                    <input id="telphone" name="usernumber"  th:value="${session.user.getUsernumber()}" type="text" value="17335751594" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" class="yun_m_info_text_input" />
+                                    <i class="yun_m_info_telphone"></i>
+                                    <span id="by_telphone" class="errordisplay">请正确填写手机号</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="yun_m_info_list">
+                            <div class="yun_m_info_name">&nbsp;</div>
+                            <div class="yun_m_info_text">
+                                <input type="submit" th:value="保存信息" class="layui-btn layui-btn-normal yun_m_info_textbth" />
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="operatebox03 mt10"><span> </span> </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+</form>
+        </div>
+    </div>
+    <div class="clear"> </div>
+</div>
+
+
+<div class="clear"></div>
+<div class="hp_foot_bt">
+    <div class="hp_foot_bt_c" align="center">
+        <p>Copyright ? 2018-2019 青芒兼职招聘网 ，龙岩市青芒科技有限公司  版权所有 <i class="hp_foot_bt_cr"><a href='http://beian.miit.gov.cn' target='_blank'> 闽ICP备19986794号-1</a></i></p>
+        <p>地址：龙岩市新罗区商务板块龙工大厦A119</p>
+
+    </div> </div>
+</body>
+</html>

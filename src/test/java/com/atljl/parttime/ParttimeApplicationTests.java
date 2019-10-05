@@ -22,12 +22,10 @@ public class ParttimeApplicationTests {
     @Test
     public void test1()
     {
-        User user=new User();
-        user.setAge(20);
-        user.setID(2);
-        user.setUsername("张三");
-        user.setSex("男");
-        user.setUserpassword("1234567");
+        User user=user=service.getUserById(6);
+        user.setRealname("hsauha");
+
+
         service.updateUser(user);
 
 

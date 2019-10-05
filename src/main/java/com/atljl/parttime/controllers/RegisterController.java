@@ -31,6 +31,9 @@ public class RegisterController {
                                 @RequestParam("userpassword") String userpassword,
                                 @RequestParam("usersex") String usersex,
                                 @RequestParam("userage") String userage,
+                                @RequestParam("usernumber") String usernumber,
+                                @RequestParam("userexperience") String userexperience,
+                                @RequestParam("realname") String realname,
                                 HttpServletRequest request,
                                 Model model
     )
@@ -45,6 +48,9 @@ public class RegisterController {
             user.setUserpassword(userpassword);
             user.setAge(Integer.parseInt(userage));
             user.setSex(usersex);
+            user.setUserexperience(userexperience);
+            user.setUsernumber(Integer.parseInt(usernumber));
+            user.setRealname(realname);
             userServices.addUser(user);
             return "login";
         }else
