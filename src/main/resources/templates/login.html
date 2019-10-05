@@ -10,12 +10,11 @@
 </head>
 
 <body>
-<div class="alert alert-success" role="alert" th:if="${msg2}!=null" th:text="${msg2}"></div>
 <div class="login_cont">
     <div class="login_w960">
         <div class="login_header ">
             <div class="logo fl" style="position:relative">
-                <a href="http://www.gaodengkeji.com"><img src="../static/pictures/logo.png" class="png"></a>
+                <a href="/index"><img src="../static/pictures/logo.png" class="png"></a>
             </div>
             <a href="/index" class="logo_fh fr">返回网站首页>></a>
         </div>
@@ -41,17 +40,13 @@
 
                             <div class="login_box_list">
                                 <i class="login_box_icon login_box_username"></i>
-                                <input type="text" class="login_box_bth placeholder loginname"  name="username" placeholder="用户名" id="username" autocomplete="off" />
+                                <input type="text" class="login_box_bth placeholder loginname"  name="username" placeholder="用户名" />
                             </div>
                             <div class="login_box_list">
                                 <i class="login_box_icon loginpwd"></i>
-                                <input type="text" id="password2" class="login_box_bth placeholder loginname " value="密码" autocomplete="off" />
-                                <input type="password" id="password" name="password" class="login_box_bth placeholder loginname  none " value="" />
-                                <div class="logoin_msg none" id="show_pass">
-                                    <div class="logoin_msg_tx">请填写密码</div>
-                                    <div class="logoin_msg_icon"></div>
-                                </div>
+                                <input type="password"  class="login_box_bth placeholder loginname "  placeholder="密码" name="userpassword"  />
                             </div>
+                            <div class="alert alert-success" align="center" style="color: #c82333" role="alert" th:if="${msg}!=null" th:text="${msg}"></div>
                         </div>
                         <div class="clear"></div>
 

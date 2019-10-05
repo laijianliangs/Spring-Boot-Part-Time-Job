@@ -6,11 +6,13 @@
 <title>青芒兼职网 </title>
 <link rel="stylesheet" href="../static/css/index1.css" type="text/css"/>
 <link rel="stylesheet" href="../static/css/index2.css" type="text/css"/>
+
 </head>
 <body  class="body_bg">
 
 <div class="yun_new_right" style="color: #1d2124">
-    <div th:if="${session.user}!=null" th:text="${session.user.getUsername()}">
+    <div th:if="${session.user}!=null">
+        <a href="/person/" th:text="我的中心"></a>
     </div>
     <div th:if="${session.user}==null">
         <a href="/login/" th:text="登录"></a>
